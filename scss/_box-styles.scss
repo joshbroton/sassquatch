@@ -49,6 +49,7 @@
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
+	overflow: hidden;
 }
 
 // Variable-size rounded corners
