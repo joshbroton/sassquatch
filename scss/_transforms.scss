@@ -9,11 +9,21 @@
 }
 
 // Increase size of element
-// @include transform-scale(FACTOR)
+// @include transform-scale(FACTOR, FACTOR)
 @mixin transform-scale($factor-width, $factor-height) {
 	-webkit-transform: scale($factor-width, $factor-height);
 	-moz-transform: scale($factor-width, $factor-height);
 	-ms-transform: scale($factor-width, $factor-height);
 	-o-transform: scale($factor-width, $factor-height);
 	transform: scale($factor-width, $factor-height);
+}
+
+// Move an element on the x- and y-axis
+// @include transform-translate(DISTANCE, DISTANCE);
+@mixin transform-scale($distance-x, $distance-y) {
+	-webkit-transform: scale($distance-x, $distance-y);
+	-moz-transform: scale($distance-x, $distance-y);
+	-ms-transform: scale($distance-x, $distance-y);
+	-o-transform: scale($distance-x, $distance-y);
+	transform: scale($distance-x, $distance-y);
 }
