@@ -7,3 +7,13 @@
 	-o-transform: rotate(#{$deg}deg);
 	transform: rotate(#{$deg}deg);
 }
+
+// Increase size of element
+// @include transform-scale(FACTOR)
+@mixin transform-scale($factor-width, $factor-height) {
+	-webkit-transform: scale($factor-width, $factor-height);
+	-moz-transform: scale($factor-width, $factor-height);
+	-ms-transform: scale($factor-width, $factor-height);
+	-o-transform: scale($factor-width, $factor-height);
+	transform: scale($factor-width, $factor-height);
+}
