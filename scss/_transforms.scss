@@ -1,6 +1,6 @@
 // Rotate an element
-// @include rotate(INT);
-@mixin rotate($deg) {
+// @include transform-rotate(INT);
+@mixin transform-rotate($deg) {
 	-webkit-transform: rotate(#{$deg}deg);
 	-moz-transform: rotate(#{$deg}deg);
 	-ms-transform: rotate(#{$deg}deg);
