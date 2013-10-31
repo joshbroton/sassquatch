@@ -38,7 +38,7 @@
 }
 
 // Retina(2x) background image
-// @include 2x(STRING RETINABACKGROUNDIMAGEURL);
+// @include background-2x(STRING RETINABACKGROUNDIMAGEURL);
 @mixin background-2x($bgimg) {
 	@media  only screen and (-webkit-min-device-pixel-ratio: 2),
 			only screen and (   min--moz-device-pixel-ratio: 2),
@@ -46,6 +46,20 @@
 			only screen and (        min-device-pixel-ratio: 2),
 			only screen and (                min-resolution: 192dpi),
 			only screen and (                min-resolution: 2dppx) {
+		background-image: #{$bgimg};
+		background-size: 100% auto;
+	}
+}
+
+// Retina(3x) background image
+// @include background-3x(STRING RETINABACKGROUNDIMAGEURL);
+@mixin background-3x($bgimg) {
+	@media  only screen and (-webkit-min-device-pixel-ratio: 3),
+			only screen and (   min--moz-device-pixel-ratio: 3),
+			only screen and (     -o-min-device-pixel-ratio: 3/1),
+			only screen and (        min-device-pixel-ratio: 3),
+			only screen and (                min-resolution: 288dpi),
+			only screen and (                min-resolution: 3dppx) {
 		background-image: #{$bgimg};
 		background-size: 100% auto;
 	}
