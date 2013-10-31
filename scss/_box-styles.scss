@@ -1,0 +1,80 @@
+// Value using calc
+// @include width-calc('STRING PROPERTY', 'STRING OPERATION')
+@mixin css3-calc($property, $operation) {
+	#{$property}: -moz-calc(#{$operation});
+	#{$property}: -webkit-calc(#{$operation});
+	#{$property}: calc(#{$operation});
+}
+
+// Horizontally center a block-level element
+// @include center-block()
+@mixin center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Object contains floated children
+// @include clearfix()
+@mixin clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Change the opacity of an element
+// @include opacity(DECIMAL 0-1)
+@mixin opacity($opacity: .5) {
+	filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+	opacity: $opacity;
+}
+
+// Equally-rounded corners
+// @include rounded(INT)
+@mixin rounded($radius: 4px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// Variable-size rounded corners
+// @include border-radius(INT, INT, INT, INT)
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+	-webkit-border-top-right-radius: $topright;
+	-webkit-border-bottom-right-radius: $bottomright;
+	-webkit-border-bottom-left-radius: $bottomleft;
+	-webkit-border-top-left-radius: $topleft;
+	-moz-border-radius-topright: $topright;
+	-moz-border-radius-bottomright: $bottomright;
+	-moz-border-radius-bottomleft: $bottomleft;
+	-moz-border-radius-topleft: $topleft;
+	border-top-right-radius: $topright;
+	border-bottom-right-radius: $bottomright;
+	border-bottom-left-radius: $bottomleft;
+	border-top-left-radius: $topleft;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+
+// Box shadow with full shadow declaration
+// @include box-shadow(SHADOW DELCARATION)
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+// Box shadow with value declarations
+// @include drop-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+	-webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	-moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
