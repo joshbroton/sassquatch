@@ -18,6 +18,16 @@
 	transform: scale($factor-width, $factor-height);
 }
 
+// Skew the shape of an element
+// @include transform-skew(INT ANGLE, INT ANGLE)
+@mixin transform-skew(#{$angle-x}deg, #{$angle-y}deg) {
+	-webkit-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+	-moz-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+	-ms-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+	-o-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+	transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+}
+
 // Move an element on the x- and y-axis
 // @include transform-translate(DISTANCE, DISTANCE);
 @mixin transform-scale($distance-x, $distance-y) {
