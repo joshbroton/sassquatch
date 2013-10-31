@@ -10,6 +10,7 @@
 
 // Increase size of element
 // @include transform-scale(FACTOR, FACTOR)
+//TODO: Can I do $factor-height: $factor-width as a default for width so @include transform-scale(4) = (4,4)?
 @mixin transform-scale($factor-width, $factor-height) {
 	-webkit-transform: scale($factor-width, $factor-height);
 	-moz-transform: scale($factor-width, $factor-height);
