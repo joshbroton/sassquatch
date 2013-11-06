@@ -22,11 +22,11 @@
 // Skew the shape of an element
 // @include transform-skew(INT ANGLE, INT ANGLE)
 @mixin transform-skew($angle-x, $angle-y) {
-	-webkit-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
-	-moz-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
-	-ms-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
-	-o-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
-	transform: scale(#{$angle-x}deg, #{$angle-y}deg);
+	-webkit-transform: skew(#{$angle-x}deg, #{$angle-y}deg);
+	-moz-transform: skew(#{$angle-x}deg, #{$angle-y}deg);
+	-ms-transform: skew(#{$angle-x}deg, #{$angle-y}deg);
+	-o-transform: skew(#{$angle-x}deg, #{$angle-y}deg);
+	transform: skew(#{$angle-x}deg, #{$angle-y}deg);
 }
 
 // Move an element on the x- and y-axis
