@@ -1,3 +1,13 @@
+// Absolutely position an element
+// @include absolute(100px, 0, auto, auto);
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
 // Set box-sizing
 // @import box-sizing(STRING TYPE);
 @mixin box-sizing($type: border-box) {
