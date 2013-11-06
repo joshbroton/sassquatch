@@ -75,7 +75,7 @@
 	-webkit-border-radius: $radius;
 	-moz-border-radius: $radius;
 	border-radius: $radius;
-	overflow: hidden;
+	background-clip: padding-box;
 }
 
 // Variable-size rounded corners
@@ -96,7 +96,6 @@
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
-	overflow: hidden;
 }
 
 // Round right-top and left-top corners
