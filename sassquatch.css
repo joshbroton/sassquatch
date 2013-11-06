@@ -1,0 +1,67 @@
+/*
+	Outputs classes (.columns-#) for each column <= $nbrOfColumns in _variables.scss
+	<div class="columns-6"></div> is 50% width in a 12-column layout
+*/
+.columns-1, .columns-2, .columns-3, .columns-4, .columns-5, .columns-6, .columns-7, .columns-8, .columns-9, .columns-10, .columns-11, .columns-12 {
+  width: 100%; }
+
+@media only screen and (min-width: 64em) {
+  .columns-1 {
+    float: left;
+    width: 8.33333%;
+    padding: 0 10px; }
+
+  .columns-2 {
+    float: left;
+    width: 16.66667%;
+    padding: 0 10px; }
+
+  .columns-3 {
+    float: left;
+    width: 25%;
+    padding: 0 10px; }
+
+  .columns-4 {
+    float: left;
+    width: 33.33333%;
+    padding: 0 10px; }
+
+  .columns-5 {
+    float: left;
+    width: 41.66667%;
+    padding: 0 10px; }
+
+  .columns-6 {
+    float: left;
+    width: 50%;
+    padding: 0 10px; }
+
+  .columns-7 {
+    float: left;
+    width: 58.33333%;
+    padding: 0 10px; }
+
+  .columns-8 {
+    float: left;
+    width: 66.66667%;
+    padding: 0 10px; }
+
+  .columns-9 {
+    float: left;
+    width: 75%;
+    padding: 0 10px; }
+
+  .columns-10 {
+    float: left;
+    width: 83.33333%;
+    padding: 0 10px; }
+
+  .columns-11 {
+    float: left;
+    width: 91.66667%;
+    padding: 0 10px; }
+
+  .columns-12 {
+    float: left;
+    width: 100%;
+    padding: 0 10px; } }
