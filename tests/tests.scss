@@ -1,0 +1,68 @@
+@import "../sassquatch";
+
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: white;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+.tests-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+.transforms {
+	.object {
+		position: relative;
+		margin: 50px;
+
+		div {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			background: red;
+			background: rgba(255,0,0,.5);
+		}
+	}
+
+	.applied-test {
+		//@include absolute(0, 0, 0, 100px);
+		border: 2px solid black;
+	}
+}
+
+.rotate {
+	.applied-test {
+		@include transform-rotate(40);
+	}
+}
+
+.scale {
+	.applied-test {
+		@include transform-scale(2,1.5);
+	}
+}
+
+.skew {
+	.applied-test {
+		@include transform-skew(10,20);
+	}
+}
+
+.translate {
+	.applied-test {
+		@include transform-translate(10px,1em);
+	}
+}
