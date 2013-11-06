@@ -31,12 +31,12 @@
 
 // Move an element on the x- and y-axis
 // @include transform-translate(DISTANCE, DISTANCE);
-@mixin transform-scale($distance-x, $distance-y) {
-	-webkit-transform: scale($distance-x, $distance-y);
-	-moz-transform: scale($distance-x, $distance-y);
-	-ms-transform: scale($distance-x, $distance-y);
-	-o-transform: scale($distance-x, $distance-y);
-	transform: scale($distance-x, $distance-y);
+@mixin transform-translate($distance-x, $distance-y) {
+	-webkit-transform: translate($distance-x, $distance-y);
+	-moz-transform: translate($distance-x, $distance-y);
+	-ms-transform: translate($distance-x, $distance-y);
+	-o-transform: translate($distance-x, $distance-y);
+	transform: translate($distance-x, $distance-y);
 }
 
 //TODO: Tackle the transform-matrix() mixin
