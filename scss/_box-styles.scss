@@ -36,6 +36,22 @@
 	}
 }
 
+// Box shadow with value declarations
+// @include drop-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+	-webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	-moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
+// Box shadow with value declarations
+// @include inset-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
+@mixin inset-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+	-webkit-box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	-moz-box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
 // Change the opacity of an element
 // @include opacity(DECIMAL 0-1)
 @mixin opacity($opacity: .5) {
@@ -119,20 +135,4 @@
 	-webkit-box-shadow: $shadow;
 	-moz-box-shadow: $shadow;
 	box-shadow: $shadow;
-}
-
-// Box shadow with value declarations
-// @include drop-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
-@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
-	-webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
-	-moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
-	box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
-}
-
-// Box shadow with value declarations
-// @include inset-shadow(X-OFFSET, Y-OFFSET, BLUR, ALPHA)
-@mixin inset-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
-	-webkit-box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
-	-moz-box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
-	box-shadow: inset $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
 }
