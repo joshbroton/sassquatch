@@ -21,7 +21,7 @@
 
 // Skew the shape of an element
 // @include transform-skew(INT ANGLE, INT ANGLE)
-@mixin transform-skew(#{$angle-x}deg, #{$angle-y}deg) {
+@mixin transform-skew($angle-x, $angle-y) {
 	-webkit-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
 	-moz-transform: scale(#{$angle-x}deg, #{$angle-y}deg);
 	-ms-transform: scale(#{$angle-x}deg, #{$angle-y}deg);

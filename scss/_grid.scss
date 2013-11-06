@@ -6,7 +6,6 @@
 
 // Mixin to calculate width of column
 // @include @grid-column(INT, VALUE, INT)
-@mixin grid-column($thisElementColumns:4, $totalWidth: 100%, $totalColumns: 12) {
-	float: left;
+@mixin grid-column($thisElementColumns:4, $totalWidth: 100%, $totalColumns: $nbrOfColumns) {
 	width: ($totalWidth / $totalColumns) * $thisElementColumns;
 }

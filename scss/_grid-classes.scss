@@ -1,0 +1,33 @@
+/*
+	Outputs classes (.columns-#) for each column <= $nbrOfColumns in _variables.scss
+	<div class="columns-6"></div> is 50% width in a 12-column layout
+*/
+
+$columnCssCounter: 1;
+$columnsList: '';
+
+@while $columnCssCounter <= $nbrOfColumns {
+	$columnsList: $columnsList + '.columns-#{$columnCssCounter}';
+	@if $columnCssCounter < $nbrOfColumns {
+		$columnsList: $columnsList + ', ';
+	}
+
+	$columnCssCounter: $columnCssCounter + 1;
+}
+
+#{$columnsList} {
+	width: 100%;
+}
+
+$columnCssCounter: 1;
+
+@media only screen and (min-width: #{$largeBreakpoint}) {
+	@while $columnCssCounter <= $nbrOfColumns {
+		.columns-#{$columnCssCounter} {
+			float: left;
+			@include grid-column($columnCssCounter, 100%, $nbrOfColumns);
+			padding: 0 10px;
+		}
+		$columnCssCounter: $columnCssCounter + 1;
+	}
+}
