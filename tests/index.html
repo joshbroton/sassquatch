@@ -5,7 +5,7 @@
 </head>
 <body>
     <div class="tests-wrapper">
-        <section class="transforms">
+        <section class="transforms mixin-set">
             <h1>
                 2D Transforms
             </h1>
@@ -88,6 +88,89 @@
                     </h3>
                     <aside>
                         Relocates an element using a 2D transform
+                    </aside>
+                </header>
+                <div class="object">
+                    <div class="vanilla">
+
+                    </div>
+                    <div class="applied-test">
+
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="animations mixin-set">
+            <h1>
+                Animations
+            </h1>
+            <section class="untouched">
+                <header>
+                    <h3>
+                        No Animations Applied
+                    </h3>
+                    <aside>
+                        Shows boxes before mixins
+                    </aside>
+                </header>
+                <div class="object">
+                    <div class="vanilla">
+
+                    </div>
+                    <div class="applied-test">
+
+                    </div>
+                </div>
+            </section>
+            <section class="transition">
+                <header>
+                    <h3>
+                        @include transition(width .3s ease);
+                    </h3>
+                    <aside>
+                        Animates an object's width
+                    </aside>
+                </header>
+                <div class="object">
+                    <div class="vanilla">
+
+                    </div>
+                    <div class="applied-test">
+
+                    </div>
+                </div>
+            </section>
+            <section class="multi-transition">
+                <header>
+                    <h3>
+                        @include multi-transition('background-color .3s ease',<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'width .3s .3s ease', <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'height .3s .6s ease');
+                    </h3>
+                    <aside>
+                        Animates an object's width and height
+                    </aside>
+                </header>
+                <div class="object">
+                    <div class="vanilla">
+
+                    </div>
+                    <div class="applied-test">
+
+                    </div>
+                </div>
+            </section>
+            <section class="animation">
+                <header>
+                    <h3>
+                        @include animation(box-rotate 5s);<br />
+                        @include keyframes(box-rotate) {<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;0% { @include rotate(0); }<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;100% { @inclide rotate(360); }<br />
+                        }
+                    </h3>
+                    <aside>
+                        Rotate an object via keyframe animation
                     </aside>
                 </header>
                 <div class="object">

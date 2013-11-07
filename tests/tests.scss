@@ -17,30 +17,40 @@ body {
 	font-size: 100%;
 }
 
+h1 {
+	font-size: 2.5em;
+}
+
 .tests-wrapper {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 0 1em;
 }
 
-.transforms {
-	.object {
-		position: relative;
-		margin: 50px;
+.mixin-set {
+	border-bottom: 2px solid #444;
 
-		div {
-			display: inline-block;
-			width: 100px;
-			height: 100px;
-			background: red;
-			background: rgba(255,0,0,.5);
-		}
+	&:last-of-type {
+		border-bottom: 0;
 	}
+}
 
-	.applied-test {
-		//@include absolute(0, 0, 0, 100px);
-		border: 2px solid black;
+.object {
+	position: relative;
+	margin: 50px;
+
+	div {
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		background: red;
+		background: rgba(255,0,0,.5);
 	}
+}
+
+.applied-test {
+	//@include absolute(0, 0, 0, 100px);
+	border: 2px solid black;
 }
 
 .rotate {
@@ -65,4 +75,37 @@ body {
 	.applied-test {
 		@include transform-translate(10px,1em);
 	}
+}
+
+.transition {
+	.applied-test {
+		@include transition(width .3s ease);
+
+		&:hover {
+			width: 0;
+		}
+	}
+}
+
+.multi-transition {
+	.applied-test {
+		@include multi-transition('background-color .3s ease, width .3s .3s ease, height .3s .6s ease');
+
+		&:hover {
+			width: 0;
+			height: 0;
+			background-color: blue;
+		}
+	}
+}
+
+.animation {
+	.applied-test {
+		@include animation(box-rotate 5s infinite linear);
+	}
+}
+
+@include keyframes(box-rotate) {
+	0% { @include transform-rotate(0); }
+	100% { @include transform-rotate(359); }
 }
