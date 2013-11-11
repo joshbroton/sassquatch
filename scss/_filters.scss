@@ -23,6 +23,16 @@
 	filter: brightness($percent);
 }
 
+// Increase or decrease the contrast of an image.
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-contrast(PERCENT);
+@mixin filter-contrast($percent: 100%) {
+	-webkit-filter: contrast($percent);
+	//-moz-filter: contrast($percent);
+	//-ms-filter: contrast($percent);
+	filter: contrast($percent);
+}
+
 // Change the grayscale of an image
 // @include filter-grayscale(PERCENTAGE);
 @mixin filter-grayscale($percent) {
@@ -39,25 +49,6 @@
 	//-moz-filter: hue-rotate(#{$rotate}deg);
 	//-ms-filter: hue-rotate(#{$rotate}deg);
 	filter: hue-rotate(#{$rotate}deg);
-}
-
-// Apply a sepia filter
-// @include filter-sepia(PERCENT);
-@mixin filter-sepia($percent) {
-	-webkit-filter: sepia($percent);
-	//-moz-filter: sepia($percent);
-	//-ms-filter: sepia($percent);
-	filter: sepia($percent);
-}
-
-// Increase or decrease the contrast of an image.
-// Min: 0, Max: n%, Default: 100% (no change at 100%)
-// @include filter-contrast(PERCENT);
-@mixin filter-contrast($percent: 100%) {
-	-webkit-filter: contrast($percent);
-	//-moz-filter: contrast($percent);
-	//-ms-filter: contrast($percent);
-	filter: contrast($percent);
 }
 
 // Invert the colors of an image
@@ -78,4 +69,13 @@
 	//-moz-filter: saturate($percent);
 	//-ms-filter: saturate($percent);
 	filter: saturate($percent);
+}
+
+// Apply a sepia filter
+// @include filter-sepia(PERCENT);
+@mixin filter-sepia($percent) {
+	-webkit-filter: sepia($percent);
+	//-moz-filter: sepia($percent);
+	//-ms-filter: sepia($percent);
+	filter: sepia($percent);
 }

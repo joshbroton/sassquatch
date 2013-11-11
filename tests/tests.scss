@@ -49,8 +49,13 @@ h1 {
 }
 
 .applied-test {
-	//@include absolute(0, 0, 0, 100px);
 	border: 2px solid black;
+}
+
+.vanilla-img,
+.applied-test-img {
+	display: inline-block;
+	width: 100px;
 }
 
 .rotate {
@@ -108,4 +113,52 @@ h1 {
 @include keyframes(box-rotate) {
 	0% { @include transform-rotate(0); }
 	100% { @include transform-rotate(359); }
+}
+
+.blur {
+	.applied-test-img {
+		@include filter-blur(10px);
+	}
+}
+
+.brightness {
+	.applied-test-img {
+		@include filter-brightness(115%);
+	}
+}
+
+.contrast {
+	.applied-test-img {
+		@include filter-contrast(125%);
+	}
+}
+
+.grayscale {
+	.applied-test-img {
+		@include filter-grayscale(100%);
+	}
+}
+
+.hue-rotate {
+	.applied-test-img {
+		@include filter-hue-rotate(150);
+	}
+}
+
+.invert {
+	.applied-test-img {
+		@include filter-invert(100%);
+	}
+}
+
+.saturate {
+	.applied-test-img {
+		@include filter-saturate(300%);
+	}
+}
+
+.sepia {
+	.applied-test-img {
+		@include filter-sepia(100%);
+	}
 }
