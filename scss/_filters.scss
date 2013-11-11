@@ -13,6 +13,16 @@
 	filter: blur($radius);
 }
 
+// Alter the brightness of an image
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-brightness(PERCENT);
+@mixin filter-brightness($percent) {
+	-webkit-filter: brightness($percent);
+	//-moz-filter: brightness($percent);
+	//-ms-filter: brightness($percent);
+	filter: brightness($percent);
+}
+
 // Change the grayscale of an image
 // @include filter-grayscale(PERCENTAGE);
 @mixin filter-grayscale($percent) {
@@ -38,15 +48,6 @@
 	//-moz-filter: sepia($percent);
 	//-ms-filter: sepia($percent);
 	filter: sepia($percent);
-}
-
-// Alter the brightness of an image
-// @include filter-brightness(PERCENT);
-@mixin filter-brightness($percent) {
-	-webkit-filter: brightness($percent);
-	//-moz-filter: brightness($percent);
-	//-ms-filter: brightness($percent);
-	filter: brightness($percent);
 }
 
 // Increase or decrease the contrast of an image.
