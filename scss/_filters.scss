@@ -39,3 +39,42 @@
 	//-ms-filter: sepia($percent);
 	filter: sepia($percent);
 }
+
+// Alter the brightness of an image
+// @include filter-brightness(PERCENT);
+@mixin filter-brightness($percent) {
+	-webkit-filter: brightness($percent);
+	//-moz-filter: brightness($percent);
+	//-ms-filter: brightness($percent);
+	filter: brightness($percent);
+}
+
+// Increase or decrease the contrast of an image.
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-contrast(PERCENT);
+@mixin filter-contrast($percent: 100%) {
+	-webkit-filter: contrast($percent);
+	//-moz-filter: contrast($percent);
+	//-ms-filter: contrast($percent);
+	filter: contrast($percent);
+}
+
+// Invert the colors of an image
+// Min: 0, Max: 100%, Default: 0 (no change at 0)
+// @include filter-invert(PERCENT);
+@mixin filter-invert($percent: 0) {
+	-webkit-filter: invert($percent);
+	//-moz-filter: invert($percent);
+	//-ms-filter: invert($percent);
+	filter: invert($percent);
+}
+
+// Increase or decrease the color saturation of an image.
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-saturate(PERCENT);
+@mixin filter-saturate($percent: 100%) {
+	-webkit-filter: saturate($percent);
+	//-moz-filter: saturate($percent);
+	//-ms-filter: saturate($percent);
+	filter: saturate($percent);
+}
