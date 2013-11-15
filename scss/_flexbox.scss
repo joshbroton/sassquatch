@@ -1,1 +1,30 @@
 //TODO: Create Flexbox mixins
+
+// Declare flexbox on the parent
+// @include flexbox();
+@mixin flexbox() {
+	// Microsoft IE10-specific styles
+	@if $flexboxSupportIE10 {
+		display: -ms-flexbox;
+		-ms-box-orient: horizontal;
+	}
+
+	// Cross-browser newest syntax
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+@mixin justify-content($justify) {
+	// Microsoft IE10-specific styles
+	@if $flexboxSupportIE10 {
+		-ms-box-pack: $justify;
+	}
+
+	// Cross-browser newest syntax
+	-webkit-justify-content: $justify;
+	-moz-justify-content: $justify;
+	-ms-justify-content: $justify;
+	justify-content: $justify;
+}
