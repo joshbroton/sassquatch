@@ -259,7 +259,7 @@ h1 {
   -webkit-filter: sepia(100%);
   filter: sepia(100%); }
 
-.horizontal .applied-test {
+.body {
   background-color: white;
   background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#bada55), to(white));
   background-image: -webkit-linear-gradient(left, #bada55, white);
@@ -267,23 +267,4 @@ h1 {
   background-image: -ms-linear-gradient(left, #bada55, white);
   background-image: -o-linear-gradient(left, #bada55, white);
   background-image: linear-gradient(left, #bada55, white);
-  background-repeat: repeat-x; }
-
-.vertical .applied-test {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bada55), to(white));
-  background-image: -webkit-linear-gradient(top, #bada55, white);
-  background-color: white;
-  background-image: -moz-linear-gradient(top, #bada55, white);
-  background-image: -ms-linear-gradient(top, #bada55, white);
-  background-image: -o-linear-gradient(top, #bada55, white);
-  background-image: linear-gradient(top, #bada55, white);
-  background-repeat: repeat-x; }
-
-.directional .applied-test {
-  background-color: white;
-  background-image: -moz-linear-gradient(45deg, #bada55, white);
-  background-image: -ms-linear-gradient(45deg, #bada55, white);
-  background-image: -webkit-linear-gradient(45deg, #bada55, white);
-  background-image: -o-linear-gradient(45deg, #bada55, white);
-  background-image: linear-gradient(45deg, #bada55, white);
   background-repeat: repeat-x; }
