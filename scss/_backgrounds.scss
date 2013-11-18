@@ -1,7 +1,7 @@
 // Gradient Backgrounds
 // Horizontal gradient background
 // @include horizontal(COLOR, COLOR)
-@mixin horizontal($startColor: $white, $endColor: $lightergrey) {
+@mixin horizontal($startColor: #ffffff, $endColor: #000000) {
 	background-color: $endColor;
 	background-image: -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor));
 	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
@@ -14,7 +14,7 @@
 
 // Vertical gradient background
 // @include vertical(COLOR, COLOR)
-@mixin vertical($startColor: $white, $endColor:  $lightergrey) {
+@mixin vertical($startColor: #ffffff, $endColor:  #777777) {
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor));
 	background-image: -webkit-linear-gradient(top, $startColor, $endColor);
 	background-color: $endColor;
@@ -27,7 +27,7 @@
 
 // Directional gradient background
 // @include directional(COLOR, COLOR, DEG)
-@mixin directional($startColor: $white, $endColor: $lightergrey, $deg: 45deg) {
+@mixin directional($startColor: #ffffff, $endColor: #777777, $deg: 45deg) {
 	background-color: $endColor;
 	background-image: -moz-linear-gradient($deg, $startColor, $endColor);
 	background-image: -ms-linear-gradient($deg, $startColor, $endColor);

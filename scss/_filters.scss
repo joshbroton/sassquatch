@@ -34,6 +34,7 @@
 }
 
 // Change the grayscale of an image
+// Min: 0, Max: 100%, Default: 0 (full color at 0)
 // @include filter-grayscale(PERCENTAGE);
 @mixin filter-grayscale($percent) {
 	-webkit-filter: grayscale($percent);
@@ -72,6 +73,7 @@
 }
 
 // Apply a sepia filter
+// Min: 0, Max: 100%, Default: 0 (full color, no sepia at 0)
 // @include filter-sepia(PERCENT);
 @mixin filter-sepia($percent) {
 	-webkit-filter: sepia($percent);

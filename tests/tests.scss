@@ -1,3 +1,4 @@
+
 @import "../sassquatch";
 
 *,
@@ -160,5 +161,23 @@ h1 {
 .sepia {
 	.applied-test-img {
 		@include filter-sepia(100%);
+	}
+}
+
+.horizontal {
+	.applied-test {
+		@include horizontal(#bada55, #ffffff);
+	}
+}
+
+.vertical {
+	.applied-test {
+		@include vertical(#bada55, #ffffff);
+	}
+}
+
+.directional {
+	.applied-test {
+		@include directional(#bada55, #ffffff, 45deg);
 	}
 }

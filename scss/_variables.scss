@@ -1,3 +1,8 @@
 // Used in _grid.scss and _grid-classes.scss to determine the number of columns to output CSS for.
 $nbrOfColumns: 12;
 $largeBreakpoint: 64em;
+
+// Flexbox
+$flexboxSupportIE10: true;
+
+//Adding this comment to test submodules in spring-theme
