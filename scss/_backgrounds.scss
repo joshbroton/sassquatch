@@ -9,7 +9,7 @@
 	background-image: -ms-linear-gradient(left, $startColor, $endColor);
 	background-image: -o-linear-gradient(left, $startColor, $endColor);
 	background-image: linear-gradient(left, $startColor, $endColor);
-	background-repeat: repeat-x;
+	background-repeat: repeat-y;
 }
 
 // Vertical gradient background
@@ -34,7 +34,49 @@
 	background-image: -webkit-linear-gradient($deg, $startColor, $endColor);
 	background-image: -o-linear-gradient($deg, $startColor, $endColor);
 	background-image: linear-gradient($deg, $startColor, $endColor);
-	background-repeat: repeat-x;
+	background-repeat: repeat;
+}
+
+//TODO: Finish multicolor-gradient() mixin -- Need old syntax and IE filter syntax
+// Multicolor / any direction gradient background
+// @include multicolor-gradient(top, COLOR, COLOR, COLOR, COLOR)
+// @include multicolor-gradient(45deg, COLOR STOP, COLOR STOP, COLOR STOP)
+@mixin multicolor-gradient($direction, $colorList...) {
+	$max: length($colorList);
+	$colors: '#{$direction}, ';
+	$w3cColors: '';
+
+	@if $direction == 'top' {
+		$w3cColors: 'to bottom, ';
+	} @else if $direction == 'bottom' {
+		$w3cColors: 'to top, '
+	} @else if $direction == 'left' {
+		$w3cColors: 'to right, '
+	} @else if $direction == 'right' {
+		$w3cColors: 'to left, '
+	} @else {
+		$w3cColors: '#{$direction}, ';
+	}
+
+	$firstColor: nth($colorList, 1);
+	$lastColor: nth($colorList, $max);
+
+	@for $i from 1 through $max {
+		$colors: #{$colors + nth($colorList, $i)};
+		$w3cColors: #{$w3cColors + nth($colorList, $i)};
+
+		@if $i < $max {
+			$colors: #{$colors + ", "};
+			$w3cColors: #{$w3cColors + ", "};
+		}
+	}
+
+	background: $lastColor;
+	background: -moz-linear-gradient($colors); /* FF3.6+ */
+	background: -webkit-linear-gradient($colors); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient($colors); /* Opera 11.10+ */
+	background: -ms-linear-gradient($colors); /* IE10+ */
+	background: linear-gradient($w3cColors); /* W3C */
 }
 
 // Retina(2x) background image
