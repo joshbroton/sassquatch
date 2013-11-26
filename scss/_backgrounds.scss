@@ -41,6 +41,7 @@
 // Multicolor / any direction gradient background
 // @include multicolor-gradient(top, COLOR, COLOR, COLOR, COLOR)
 // @include multicolor-gradient(45deg, COLOR STOP, COLOR STOP, COLOR STOP)
+// @include multicolor-gradient(bottom, white 0%, red 25%, blue 50%, yellow 75%, green 100%)
 @mixin multicolor-gradient($direction, $colorList...) {
 	$max: length($colorList);
 	$colors: '#{$direction}, ';
