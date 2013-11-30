@@ -1,3 +1,12 @@
+// Set a Transform point
+// @include transform-origin(PERCENTAGE_WIDTH, PERCENTAGE_HEIGHT)
+// @include transform-origin(25%, 50%)
+@mixin transform-origin($x, $y) {
+	-webkit-transform-origin: $x $y;
+	-ms-transform-origin: $x $y;
+	transform-origin: $x $y;
+}
+
 // Rotate an element
 // @include transform-rotate(INT);
 @mixin transform-rotate($deg) {
