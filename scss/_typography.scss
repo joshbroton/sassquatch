@@ -75,7 +75,7 @@
 		@if $value != 0 {
 			$pxValues: #{$pxValues + $value}px;
 		} @else {
-			$pxValues: #{pxValues + $value};
+			$pxValues: #{$pxValues + $value};
 		}
 
 		@if $i < $max {
@@ -93,7 +93,7 @@
 		}
 
 		@if $i < $max {
-			$pxValues: #{$pxValues + " "};
+			$remValues: #{$remValues + " "};
 		}
 	}
 
