@@ -9,6 +9,7 @@
 	background-image: -ms-linear-gradient(left, $startColor, $endColor);
 	background-image: -o-linear-gradient(left, $startColor, $endColor);
 	background-image: linear-gradient(left, $startColor, $endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=1 );
 	background-repeat: repeat-y;
 }
 
@@ -22,6 +23,7 @@
 	background-image: -ms-linear-gradient(top, $startColor, $endColor);
 	background-image: -o-linear-gradient(top, $startColor, $endColor);
 	background-image: linear-gradient(top, $startColor, $endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=0 );
 	background-repeat: repeat-x;
 }
 
@@ -34,6 +36,7 @@
 	background-image: -webkit-linear-gradient($deg, $startColor, $endColor);
 	background-image: -o-linear-gradient($deg, $startColor, $endColor);
 	background-image: linear-gradient($deg, $startColor, $endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$startColor}', endColorstr='#{$endColor}',GradientType=1 );
 	background-repeat: repeat;
 }
 
