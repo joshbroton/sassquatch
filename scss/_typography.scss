@@ -100,3 +100,47 @@
 	#{$property}: $pxValues;
 	#{$property}: $remValues;
 }
+
+// Fakes an ellipsis on a multi-line content box
+// Apply on a parent of the element you want the multi-line ellipsis inside of
+// @include multiline-ellipsis(STRING CSS-SELECTOR, PX-OR-EM-VALUE, LINEHEIGHT, WIDTH OF GRADIENT BG, 'CONTENT-OF-ELLIPSIS');
+// @include multiline-ellipsis('.content', 6em, 1.2em, 3em, '...');
+@mixin multiline-ellipsis($element, $height, $lineheightinmixin, $ellipsiswidth, $content) {
+
+	$element: '.ellipsis' !default;
+	$ellipsiswidth: 3em !default;
+	$content: "\02026" !default;
+
+	#{$element} {
+		overflow: hidden;
+		height: $height;
+		line-height: $lineheightinmixin; }
+
+	#{$element}:before {
+		content:"";
+		float: left;
+		width: 5px; height: $height; }
+
+	#{$element} > *:first-child {
+		float: right;
+		width: 100%;
+		margin-left: -5px; }
+
+	#{$element}:after {
+		content: $content;
+
+		float: right; position: relative;
+		top: -$lineheightinmixin; left: 100%;
+		width: $ellipsiswidth; margin-left: -$ellipsiswidth;
+		padding-right: 5px;
+
+		text-align: right;
+		background: white;
+		background: -webkit-gradient(linear, left top, right top,
+			from(rgba(242, 247, 250, 0)), to($kbTan), color-stop(50%, $kbTan));
+		background: -moz-linear-gradient(to right, rgba(242, 247, 250, 0), $kbTan 50%, $kbTan);
+		background: -o-linear-gradient(to right, rgba(242, 247, 250, 0), $kbTan 50%, $kbTan);
+		background: -ms-linear-gradient(to right, rgba(242, 247, 250, 0), $kbTan 50%, $kbTan);
+		background: linear-gradient(to right, rgba(242, 247, 250, 0), $kbTan 50%, $kbTan);
+	}
+}
