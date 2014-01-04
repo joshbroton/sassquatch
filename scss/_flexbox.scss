@@ -27,7 +27,7 @@
 	justify-content: $justify;
 }
 
-@mixin flexbox-wrap($wrap) {
+@mixin flexbox-flex-wrap($wrap) {
 	// Microsoft IE10-specific styles
 	@if $flexboxSupportIE10 {
 		-ms-flex-wrap: $wrap
@@ -37,4 +37,14 @@
 	// Firefox doesn't support flex-wrap as of v25
 	-webkit-flex-wrap: $wrap;
 	flex-wrap: $wrap;
+}
+
+@mixin flexbox-align-items($align) {
+	// Microsoft IE10-specific styles
+	@if $flexboxSupportIE10 {
+		-ms-flex-align: $align;
+	}
+
+	-webkit-align-items: $align;
+	align-items: $align;
 }
