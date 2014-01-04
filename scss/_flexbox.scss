@@ -30,7 +30,7 @@
 @mixin flexbox-flex-wrap($wrap) {
 	// Microsoft IE10-specific styles
 	@if $flexboxSupportIE10 {
-		-ms-flex-wrap: $wrap
+		-ms-flex-wrap: $wrap;
 	}
 
 	// Cross-browser newest syntax
