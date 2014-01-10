@@ -129,6 +129,8 @@
 	#{$element}:after {
 		content: $content;
 
+		@include box-sizing(content-box);
+
 		float: right; position: relative;
 		top: -$lineheightinmixin; left: 100%;
 		width: $ellipsiswidth; margin-left: -$ellipsiswidth;
