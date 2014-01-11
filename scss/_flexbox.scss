@@ -11,6 +11,11 @@
 		-ms-box-orient: horizontal;
 	}
 
+    @if $flexboxSupportLegacy {
+        display: -moz-box;
+        display: -webkit-box;
+    }
+
 	// Cross-browser newest syntax
 	display: -webkit-flex;
 	display: flex;
@@ -18,9 +23,44 @@
 
 @mixin flexbox-justify-content($justify) {
 	// Microsoft IE10-specific styles
-	@if $flexboxSupportIE10 {
-		-ms-box-pack: $justify;
-	}
+	//@if $flexboxSupportIE10 {
+	//	-ms-flex-pack: $justify;
+	//}
+
+    $legacyJustify: none;
+
+    @if $flexboxSupportLegacy or $flexboxSupportIE10 {
+        @if $justify == flex-start {
+            $legacyJustify: start;
+        }
+
+        @if $justify == flex-end {
+            $legacyJustify: end;
+        }
+
+        @if $justify == center {
+            $legacyJustify: center;
+        }
+
+        @if $justify == space-between {
+            $legacyJustify: justify;
+        }
+
+        // There is no box-pack equivalent for space-around available,
+        // so if you're supporting the box syntax, choose another
+        @if $justify == space-around {
+            $legacyJustify: distribute;
+        }
+    }
+
+    @if $flexboxSupportLegacy {
+        -webkit-box-pack: $legacyJustify;
+        -moz-box-pack: $legacyJustify;
+    }
+
+    @if $flexboxSupportIE10 {
+        -ms-flex-pack: $legacyJustify;
+    }
 
 	// Cross-browser newest syntax
 	-webkit-justify-content: $justify;
