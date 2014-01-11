@@ -190,3 +190,19 @@
     -webkit-flex-direction: $dir;
     flex-direction: $dir;
 }
+
+//
+//
+@mixin flexbox-order($order) {
+    @if $flexboxSupportLegacy {
+        -webkit-box-ordinal-group: $order;
+        -moz-box-ordinal-group: $order;
+    }
+
+    @if $flexboxSupportIE10 {
+        -ms-flex-order: $order;
+    }
+
+    -webkit-order: $order;
+    order: $order;
+}
