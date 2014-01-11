@@ -80,9 +80,39 @@
 }
 
 @mixin flexbox-align-items($align) {
+
+    $legacyAlign: none;
+
+    @if $flexboxSupportLegacy or $flexboxSupportIE10 {
+        @if $align == flex-start {
+            $legacyAlign: start;
+        }
+
+        @if $align == flex-end {
+            $legacyAlign: end;
+        }
+
+        @if $align == center {
+            $legacyAlign: center;
+        }
+
+        @if $align == baseline {
+            $legacyAlign: baseline;
+        }
+
+        @if $align == stretch {
+            $legacyAlign: stretch;
+        }
+    }
+
+    @if $flexboxSupportLegacy {
+        -webkit-box-align: $legacyAlign;
+        -moz-box-align: $legacyAlign;
+    }
+
 	// Microsoft IE10-specific styles
 	@if $flexboxSupportIE10 {
-		-ms-flex-align: $align;
+		-ms-flex-align: $legacyAlign;
 	}
 
 	-webkit-align-items: $align;
