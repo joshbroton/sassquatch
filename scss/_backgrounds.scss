@@ -110,3 +110,9 @@
 		background-size: 100% auto;
 	}
 }
+
+// Clear IE background gradient filter
+//@include clearIeGradient();
+@mixin clearIeGradient() {
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
