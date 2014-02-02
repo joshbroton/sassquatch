@@ -50,3 +50,22 @@
 
 //TODO: Tackle the transform-matrix() mixin
 //TODO: 3D Transform mixins
+
+// Move an element on the z-axis
+// @include transform-translateZ(DISTANCE)
+@mixin transform-translateZ($distance-z) {
+	-webkit-transform: translateZ($distance-z);
+	-moz-transform: translateZ($distance-z);
+	-ms-transform: translateZ($distance-z);
+	-o-transform: translateZ($distance-z);
+	transform: translateZ($distance-z);
+}
+
+// Move an element on the x-, y-, and z-axis
+// @include transform-translate3d(DISTANCE, DISTANCE, DISTANCE);
+@mixin transform-translate3d($distance-x, $distance-y, $distance-z) {
+	-webkit-transform: translate3d($distance-x, $distance-y, $distance-z);
+	-moz-transform: translate3d($distance-x, $distance-y, $distance-z);
+	-ms-transform: translate3d($distance-x, $distance-y, $distance-z);
+	transform: translate3d($distance-x, $distance-y, $distance-z);
+}
