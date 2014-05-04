@@ -27,6 +27,16 @@
 	background-repeat: repeat-x;
 }
 
+// Radial gradient background
+// @include radial(COLOR, COLOR)
+@mixin radial($startColor: #ffffff, $endColor:  #777777) {
+	background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($startColor), to($endColor));
+	background-image: -webkit-radial-gradient(circle, $startColor, $endColor);
+	background-image: -moz-radial-gradient(circle, $startColor, $endColor);
+	background-image: radial-gradient(circle, $startColor, $endColor);
+	background-repeat: no-repeat;
+}
+
 // Directional gradient background
 // @include directional(COLOR, COLOR, DEG)
 @mixin directional($startColor: #ffffff, $endColor: #777777, $deg: 45deg) {
@@ -81,6 +91,17 @@
 	background: -o-linear-gradient($colors); /* Opera 11.10+ */
 	background: -ms-linear-gradient($colors); /* IE10+ */
 	background: linear-gradient($w3cColors); /* W3C */
+}
+
+// Three color gradient
+// @include horizontal-3(COLOR, COLOR, COLOR);
+@mixin horizontal-3color($startColor: #ffffff, $midColor: #bbbbbb, $endColor:  #777777) {
+	background-image: -webkit-linear-gradient(left, $startColor, $midColor 50%, $endColor);
+	background-color: $endColor;
+	background-image: -moz-linear-gradient(left, $startColor, $midColor 50%, $endColor);
+	background-image: -ms-linear-gradient(left, $startColor, $midColor 50%, $endColor);
+	background-image: -o-linear-gradient(left, $startColor, $midColor 50%, $endColor);
+	background-image: linear-gradient(to right, $startColor, $midColor 50%, $endColor);
 }
 
 // Retina(2x) background image
