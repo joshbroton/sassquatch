@@ -112,6 +112,7 @@
 	$content: "\02026" !default;
 
 	#{$element} {
+		display: block;
 		overflow: hidden;
 		height: $height;
 		line-height: $lineheightinmixin; }
@@ -119,7 +120,8 @@
 	#{$element}:before {
 		content:"";
 		float: left;
-		width: 5px; height: $height; }
+		width: 5px; height: $height;
+		@include box-sizing(content-box);}
 
 	#{$element} > *:first-child {
 		float: right;
