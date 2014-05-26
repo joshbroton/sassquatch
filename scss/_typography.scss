@@ -105,11 +105,13 @@
 // Apply on a parent of the element you want the multi-line ellipsis inside of
 // @include multiline-ellipsis(STRING CSS-SELECTOR, PX-OR-EM-VALUE, LINEHEIGHT, WIDTH OF GRADIENT BG, 'CONTENT-OF-ELLIPSIS');
 // @include multiline-ellipsis('.content', 6em, 1.2em, 3em, '...');
-@mixin multiline-ellipsis($element, $height, $lineheightinmixin, $ellipsiswidth, $content, $backgrndColor) {
+@mixin multiline-ellipsis($element, $height, $lineheightinmixin, $ellipsiswidth, $content, $backgrndColor, $fadeTo: rgba(255,255,255,0)) {
 
 	$element: '.ellipsis' !default;
 	$ellipsiswidth: 3em !default;
 	$content: "\02026" !default;
+    $backgrndColor: #ffffff !default;
+    $fadeTo: rgba(255,255,255,0);
 
 	#{$element} {
 		display: block;
@@ -141,10 +143,10 @@
 		text-align: right;
 		background: white;
 		background: -webkit-gradient(linear, left top, right top,
-			from(rgba(242, 247, 250, 0)), to($backgrndColor), color-stop(50%, $backgrndColor));
-		background: -moz-linear-gradient(to right, rgba(242, 247, 250, 0), $backgrndColor 50%, $backgrndColor);
-		background: -o-linear-gradient(to right, rgba(242, 247, 250, 0), $backgrndColor 50%, $backgrndColor);
-		background: -ms-linear-gradient(to right, rgba(242, 247, 250, 0), $backgrndColor 50%, $backgrndColor);
-		background: linear-gradient(to right, rgba(242, 247, 250, 0), $backgrndColor 50%, $backgrndColor);
+			from($fadeTo), to($backgrndColor), color-stop(50%, $backgrndColor));
+		background: -moz-linear-gradient(to right, $fadeTo, $backgrndColor 50%, $backgrndColor);
+		background: -o-linear-gradient(to right, $fadeTo, $backgrndColor 50%, $backgrndColor);
+		background: -ms-linear-gradient(to right, $fadeTo, $backgrndColor 50%, $backgrndColor);
+		background: linear-gradient(to right, $fadeTo, $backgrndColor 50%, $backgrndColor);
 	}
 }
