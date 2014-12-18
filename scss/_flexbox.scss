@@ -94,7 +94,7 @@
     }
 
     @if $flexboxSupportIE10 {
-        -ms-flex-pack: $wrap;
+        -ms-flex-wrap: $wrap;
     }
 	// Cross-browser newest syntax
 	// Firefox doesn't support flex-wrap, but will as of v28
