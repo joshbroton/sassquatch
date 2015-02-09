@@ -1,0 +1,47 @@
+// Draw an arrow pointing up. Can be called on element or pseudoelement.
+// @include arrowUp(#fff, 2rem, 1rem);
+@mixin arrowUp($color, $arrowWidth, $arrowHeight) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: $arrowHeight solid $color;
+    border-left: ($arrowWidth/2) solid transparent;
+    border-right: ($arrowWidth/2) solid transparent;
+}
+
+// Draw an arrow pointing right. Can be called on element or pseudoelement.
+// @include arrowRight(#fff, 1rem, 2rem);
+@mixin arrowRight($color, $arrowWidth, $arrowHeight) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: $arrowWidth solid $color;
+    border-top: ($arrowHeight/2) solid transparent;
+    border-bottom: ($arrowHeight/2) solid transparent;
+}
+
+// Draw an arrow pointing down. Can be called on element or pseudoelement.
+// @include arrowDown(#fff, 2rem, 1rem);
+@mixin arrowDown($color, $arrowWidth, $arrowHeight) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: $arrowHeight solid $color;
+    border-left: ($arrowWidth/2) solid transparent;
+    border-right: ($arrowWidth/2) solid transparent;
+}
+
+// Draw an arrow pointing left. Can be called on element or pseudoelement.
+// @include arrowRight(#fff, 1rem, 2rem);
+@mixin arrowLeft($color, $arrowWidth, $arrowHeight) {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: $arrowWidth solid $color;
+    border-top: ($arrowHeight/2) solid transparent;
+    border-bottom: ($arrowHeight/2) solid transparent;
+}
