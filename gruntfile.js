@@ -4,17 +4,17 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    "dev/css/styles.css": "dev/scss/styles.scss"
+                    "tests/tests.css": "tests/tests.scss"
                 }
             }
         },
         watch: {
             livereload: {
                 options: { livereload: true },
-                files: ['dev/css/*.css', 'dev/js/*.js', 'dev/index.html']
+                files: ['tests/*']
             },
             sass: {
-                files: 'dev/scss/*.scss',
+                files: 'tests/*.scss',
                 tasks: ['sass']
             },
             scripts: {
