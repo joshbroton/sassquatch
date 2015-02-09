@@ -1,6 +1,4 @@
-//TODO: Create Flexbox mixins
 //http://msdn.microsoft.com/en-us/library/ie/hh673531(v=vs.85).aspx
-//
 
 // Declare flexbox on the parent
 // @include flexbox();
@@ -24,11 +22,6 @@
 //
 //
 @mixin flexbox-justify-content($justify) {
-	// Microsoft IE10-specific styles
-	//@if $flexboxSupportIE10 {
-	//	-ms-flex-pack: $justify;
-	//}
-
     $legacyJustify: none;
 
     @if $flexboxSupportLegacy or $flexboxSupportIE10 {
