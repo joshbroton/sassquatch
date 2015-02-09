@@ -181,3 +181,31 @@ h1 {
 		@include directional(#bada55, #ffffff, 45deg);
 	}
 }
+
+.arrow-up {
+	.arrow {
+		margin: 1rem 0;
+		@include arrowUp(#ccc, 8rem, 4rem);
+	}
+}
+
+.arrow-right {
+	.arrow {
+		margin: 1rem 0;
+		@include arrowRight(#ccc, 8rem, 4rem);
+	}
+}
+
+.arrow-down {
+	.arrow {
+		margin: 1rem 0;
+		@include arrowDown(#ccc, 6rem, 6rem);
+	}
+}
+
+.arrow-left {
+	.arrow {
+		margin: 1rem 0;
+		@include arrowLeft(#ccc, 10rem, 3rem);
+	}
+}
