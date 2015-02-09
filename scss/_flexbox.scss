@@ -7,8 +7,8 @@
 @mixin flexbox() {
 	// Microsoft IE10-specific styles
 	@if $flexboxSupportIE10 {
-		display: -ms-flexbox;
 		-ms-box-orient: horizontal;
+		display: -ms-flexbox;
 	}
 
     @if $flexboxSupportLegacy {
