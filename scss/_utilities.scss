@@ -17,3 +17,15 @@
 		@content;
 	}
 }
+
+@mixin bp($width) {
+	@media screen and (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin maxbp($width) {
+	@media screen and (max-width: ($width - (1em/16))) {
+		@content;
+	}
+}
